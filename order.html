@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="order.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+      rel="stylesheet" />
+    <title>Order page</title>
+  </head>
+  <body>
+    <header>
+      <h1>Confirm order</h1>
+    </header>
+    <main>
+      <form id="form" action="#" class="form_class">
+        <div class="item-form_class">
+          <label for="">Name:</label>
+          <input type="text" id="inp-name" name="" class="input-field" />
+          <p id="invalid-name" class="invalid">* The field is invalid!</p>
+        </div>
+
+        <div class="item-form_class">
+          <label for="">Surname:</label>
+          <input type="text" id="inp-surname" name="" class="input-field" />
+          <p id="invalid-surname" class="invalid">* The field is invalid!</p>
+        </div>
+
+        <div class="item-form_class">
+          <label for="">Delivery date:</label>
+          <input
+            type="date"
+            id="inp-date"
+            required
+            pattern="\d{4}-\d{2}-\d{2}"
+            name=""
+            class="input-field" />
+          <p id="invalid-date" class="invalid">* The field is invalid!</p>
+        </div>
+
+        <div class="item-form_class">
+          <label for="">Street:</label>
+          <input type="text" id="inp-street" name="" class="input-field" />
+          <p id="invalid-street" class="invalid">* The field is invalid!</p>
+        </div>
+
+        <div class="item-form_class">
+          <label for="">House number:</label>
+          <input type="text" id="inp-house" name="" class="input-field" />
+          <p id="invalid-house" class="invalid">* The field is invalid!</p>
+        </div>
+
+        <div class="item-form_class">
+          <label for="">Flat number:</label>
+          <input type="text" id="inp-flat" name="" class="input-field" />
+          <p id="invalid-flat" class="invalid">* The field is invalid!</p>
+        </div>
+
+        <div>
+          Choose the payment type:
+
+          <div id="inp-payment" tabindex="0">
+            <label>
+              <input type="radio" name="cash" value="cash" id="cash-radio" />
+              Cash
+            </label>
+            <label>
+              <input type="radio" name="card" value="card" id="card-radio" />
+              Card
+            </label>
+          </div>
+          <p id="invalid-payment" class="invalid">* The field is invalid!</p>
+        </div>
+        <div>
+          Choose 2 gifts:<br />
+          <br />
+          <label>
+            <input
+              type="checkbox"
+              name="pack"
+              value="pack"
+              id="check-pack"
+              class="check" />
+            pack as a gift </label
+          ><br />
+          <label>
+            <input
+              type="checkbox"
+              name="postcard"
+              value="postcard"
+              id="check-postcard"
+              class="check" />
+            add postcard
+          </label>
+          <br />
+          <label>
+            <input
+              type="checkbox"
+              name="discount"
+              value="discount"
+              id="check-discount-radio"
+              class="check" />
+            provide 2% discount to the next time </label
+          ><br />
+          <label>
+            <input
+              type="checkbox"
+              name="pen"
+              value="pen"
+              id="check-pen"
+              class="check" />
+            branded pen or pencil
+          </label>
+        </div>
+
+        <div class="btn-complete-container">
+          <button id="btn-complete" name="complete" class="btn-complete">
+            Complete
+          </button>
+        </div>
+      </form>
+      <div class="created" id="popModal">
+        <h2>The order created!</h2>
+        <hr />
+        <br />
+        <p id="address-result"></p>
+        <br />
+        <p id="recipient-result"></p>
+        <br />
+        <hr />
+        <h4>Thank You!</h4>
+        <hr />
+
+        <button id="close-btn">CLOSE</button>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-div_class">
+        <p class="creator_class">Created by Nataliia Boiko, November 2022</p>
+      </div>
+    </footer>
+    <script src="./order.js"></script>
+  </body>
+</html>

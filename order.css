@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(159, 206, 240);
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+main {
+  border: 3px solid rgb(177, 180, 184);
+  padding: 15px;
+  background-color: rgb(217, 232, 243);
+}
+.form_class {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.item-form_class {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  margin: 10px;
+}
+.item-form_class label {
+  width: 200px;
+}
+.item-form_class input {
+  width: 200px;
+}
+.item-form_class p {
+  width: 200px;
+}
+
+h1 {
+  margin-left: -300px;
+  color: #023141;
+}
+
+input {
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.invalid {
+  visibility: hidden;
+  background-color: white;
+  color: red;
+  font-size: 16px;
+  border: 2px solid red;
+  border-radius: 5px;
+  height: 35px;
+}
+
+.inv {
+  outline: none;
+  border: 2px solid red;
+}
+
+.val {
+  outline: none;
+  border: 2px solid black;
+}
+
+.input-div-cont {
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+p {
+  margin: 0 0 0 15px;
+}
+
+.btn-complete-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-complete {
+  margin-left: -450px;
+  margin-top: 30px;
+  cursor: not-allowed;
+  background-color: rgb(160, 246, 237);
+  font-size: 18px;
+  width: 150px;
+  padding: 5px;
+}
+
+.btn-complete:disabled {
+  cursor: not-allowed !important;
+}
+
+/* !created */
+
+.created {
+  display: none;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  top: 20%;
+  left: 20%;
+  align-content: center;
+  text-align: start;
+  padding: 15px;
+}
+
+#address-result {
+  font-size: 22px;
+}
+
+#recipient-result {
+  font-size: 22px;
+}
+
+#close-btn {
+  margin-top: 30px;
+  background-color: rgb(111, 188, 243);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* !footer */
+
+footer {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: -25px;
+}
+.creator_class {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 0;
+}
+.footer-div_class {
+  background-color: #31302e;
+  color: #e8dcb8;
+  text-align: center;
+}
