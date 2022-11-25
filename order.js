@@ -17,21 +17,15 @@ nameInp.addEventListener("mouseleave", completeBtn);
 nameInp.addEventListener("input", function () {
   let val = document.getElementById("inp-name").value;
   let el = document.getElementById("inp-name");
-  if (/^[A-Za-z]{4,}$/.test(val)) {
-    el.className = "val";
-    mistName.style.visibility = "hidden";
-    validName = true;
-  } else {
+  if (!/^[A-Za-z]*$/.test(val)) {
     el.className = "inv";
     mistName.style.visibility = "visible";
     validName = false;
-  }
-});
-nameInp.addEventListener("mouseleave", completeBtn);
-nameInp.addEventListener("blur", function () {
-  let val = document.getElementById("inp-name").value;
-  let el = document.getElementById("inp-name");
-  if (val.length < 4) {
+  } else if (val.indexOf(" ") > -1) {
+    el.className = "inv";
+    mistName.style.visibility = "visible";
+    validName = false;
+  } else if (val.length < 4) {
     el.className = "inv";
     mistName.style.visibility = "visible";
     validName = false;
@@ -48,22 +42,15 @@ surNameInp.addEventListener("mouseleave", completeBtn);
 surNameInp.addEventListener("input", function () {
   let val = document.getElementById("inp-surname").value;
   let el = document.getElementById("inp-surname");
-  if (/^[A-Za-z]{5,}$/.test(val)) {
-    el.className = "val";
-    mistSurName.style.visibility = "hidden";
-    validSurName = true;
-  } else {
+  if (!/^[A-Za-z]*$/.test(val)) {
     el.className = "inv";
     mistSurName.style.visibility = "visible";
     validSurName = false;
-  }
-});
-
-surNameInp.addEventListener("mouseleave", completeBtn);
-surNameInp.addEventListener("blur", function () {
-  let val = document.getElementById("inp-surname").value;
-  let el = document.getElementById("inp-surname");
-  if (val.length < 5) {
+  } else if (val.indexOf(" ") > -1) {
+    el.className = "inv";
+    mistSurName.style.visibility = "visible";
+    validSurName = false;
+  } else if (val.length < 5) {
     el.className = "inv";
     mistSurName.style.visibility = "visible";
     validSurName = false;
@@ -78,36 +65,20 @@ surNameInp.addEventListener("blur", function () {
 
 let dateInp = document.getElementById("inp-date");
 let mistDate = document.getElementById("invalid-date");
-dateInp.addEventListener("input", completeBtn);
-dateInp.addEventListener("mouseleave", function () {
-  let el = document.getElementById("inp-date");
-  let tomorrow = new Date() + 1;
-  let datePicked = document.getElementById("inp-date").value;
-  let userDate = new Date(datePicked);
-  if (userDate <= tomorrow) {
-    el.className = "inv";
-    mistDate.style.visibility = "visible";
-    validDate = false;
-  } else {
-    el.className = "val";
-    mistDate.style.visibility = "hidden";
-    validDate = true;
-  }
-});
-dateInp.addEventListener("mouseleave", completeBtn);
-dateInp.addEventListener("blur", function () {
+dateInp.addEventListener("input", function () {
   let el = document.getElementById("inp-date");
   let tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate());
   let datePicked = document.getElementById("inp-date").value;
   let userDate = new Date(datePicked);
-  if (datePicked && userDate > tomorrow) {
-    el.className = "val";
-    mistDate.style.visibility = "hidden";
-    validDate = true;
-  } else {
+  if (userDate < tomorrow) {
     el.className = "inv";
     mistDate.style.visibility = "visible";
     validDate = false;
+  } else {
+    el.className = "val";
+    mistDate.style.visibility = "hidden";
+    validDate = true;
   }
 });
 
@@ -125,20 +96,6 @@ streetInp.addEventListener("input", function () {
     el.className = "inv";
     mistStreet.style.visibility = "visible";
     validStreet = false;
-  }
-});
-streetInp.addEventListener("mouseleave", completeBtn);
-streetInp.addEventListener("blur", function () {
-  let val = document.getElementById("inp-street").value;
-  let el = document.getElementById("inp-street");
-  if (val.length < 5) {
-    el.className = "inv";
-    mistStreet.style.visibility = "visible";
-    validStreet = false;
-  } else {
-    el.className = "val";
-    mistStreet.style.visibility = "hidden";
-    validStreet = true;
   }
 });
 
@@ -160,20 +117,6 @@ houseInp.addEventListener("input", function () {
     }
   }
 });
-houseInp.addEventListener("mouseleave", completeBtn);
-houseInp.addEventListener("blur", function () {
-  let val = document.getElementById("inp-house").value;
-  let el = document.getElementById("inp-house");
-  if (val.length === 0) {
-    el.className = "inv";
-    mistHouse.style.visibility = "visible";
-    validHouse = false;
-  } else {
-    el.className = "val";
-    mistHouse.style.visibility = "hidden";
-    validHouse = true;
-  }
-});
 
 // flat
 let mistFlat = document.getElementById("invalid-flat");
@@ -181,22 +124,15 @@ flatInp.addEventListener("mouseleave", completeBtn);
 flatInp.addEventListener("input", function () {
   let val = document.getElementById("inp-flat").value;
   let el = document.getElementById("inp-flat");
-  if (/^[0-9]/.test(val)) {
-    el.className = "val";
-    mistFlat.style.visibility = "hidden";
-    validFlat = true;
-  } else {
+  if (!/^[-0-9-]*$/.test(val)) {
     el.className = "inv";
     mistFlat.style.visibility = "visible";
     validFlat = false;
-  }
-});
-
-flatInp.addEventListener("mouseleave", completeBtn);
-flatInp.addEventListener("blur", function () {
-  let val = document.getElementById("inp-flat").value;
-  let el = document.getElementById("inp-flat");
-  if (val.length === 0) {
+  } else if (!/^[1-9]/.test(val)) {
+    el.className = "inv";
+    mistFlat.style.visibility = "visible";
+    validFlat = false;
+  } else if (val.toString().slice(-1) === "-") {
     el.className = "inv";
     mistFlat.style.visibility = "visible";
     validFlat = false;

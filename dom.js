@@ -81,12 +81,13 @@ const booksList = [
       "Secrets of the Javascript Ninja takes you on a journey towards mastering modern JavaScript development in three phases: design, construction, and maintenance. Written for JavaScript developers with intermediate-level skills, this book will give you the knowledge you need to create a cross-browser JavaScript library from the ground up.",
   },
 ];
-
+let fragment = document.createDocumentFragment();
 ///////////////////////////////////
 // TODO Create page
+
 let project = document.createElement("header");
 project.classList.add("wrapper");
-document.body.append(project);
+// document.body.append(project);
 const div = document.createElement("div");
 project.appendChild(div);
 const header = document.createElement("h1");
@@ -95,11 +96,13 @@ div.insertAdjacentElement("beforebegin", header);
 header.classList.add("main_name");
 const main = document.createElement("main");
 main.classList.add("main_class");
-document.body.append(main);
+// document.body.append(main);
 const bookSection = document.createElement("section");
 bookSection.classList.add("bookSection_class");
 main.appendChild(bookSection);
-
+fragment.append(project);
+fragment.append(main);
+document.body.appendChild(fragment);
 // TODO Create basket
 // table
 
